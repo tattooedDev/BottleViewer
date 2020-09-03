@@ -7,13 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+    private let beveragesStore = BeverageStore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .systemBackground
+        
+        beveragesStore.fetchAllBeverages { result in
+            do {
+                let beverages = try result.get()
+                print(beverages)
+            } catch {
+                print(error)
+            }
+        }
     }
-
-
 }
-

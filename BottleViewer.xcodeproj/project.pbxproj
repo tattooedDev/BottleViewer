@@ -10,9 +10,13 @@
 		95B499862500C1A500333C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499852500C1A500333C7A /* AppDelegate.swift */; };
 		95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499872500C1A500333C7A /* SceneDelegate.swift */; };
 		95B4998A2500C1A500333C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499892500C1A500333C7A /* ViewController.swift */; };
-		95B4998D2500C1A500333C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B4998B2500C1A500333C7A /* Main.storyboard */; };
 		95B4998F2500C1A600333C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B4998E2500C1A600333C7A /* Assets.xcassets */; };
 		95B499922500C1A600333C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B499902500C1A600333C7A /* LaunchScreen.storyboard */; };
+		95B4999A2500C1FC00333C7A /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499992500C1FC00333C7A /* Beverage.swift */; };
+		95B4999E2500C28100333C7A /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4999D2500C28100333C7A /* Networker.swift */; };
+		95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4999F2500C2A700333C7A /* URLRequestFactory.swift */; };
+		95B499A22500C2D000333C7A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499A12500C2D000333C7A /* HTTPMethod.swift */; };
+		95B499A42500C4EB00333C7A /* BeverageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499A32500C4EB00333C7A /* BeverageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,14 @@
 		95B499852500C1A500333C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B499872500C1A500333C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		95B499892500C1A500333C7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95B4998C2500C1A500333C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95B4998E2500C1A600333C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95B499912500C1A600333C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95B499932500C1A600333C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B499992500C1FC00333C7A /* Beverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverage.swift; sourceTree = "<group>"; };
+		95B4999D2500C28100333C7A /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		95B4999F2500C2A700333C7A /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
+		95B499A12500C2D000333C7A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		95B499A32500C4EB00333C7A /* BeverageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +67,11 @@
 				95B499852500C1A500333C7A /* AppDelegate.swift */,
 				95B499872500C1A500333C7A /* SceneDelegate.swift */,
 				95B499892500C1A500333C7A /* ViewController.swift */,
-				95B4998B2500C1A500333C7A /* Main.storyboard */,
+				95B499A32500C4EB00333C7A /* BeverageStore.swift */,
+				95B499992500C1FC00333C7A /* Beverage.swift */,
+				95B4999D2500C28100333C7A /* Networker.swift */,
+				95B4999F2500C2A700333C7A /* URLRequestFactory.swift */,
+				95B499A12500C2D000333C7A /* HTTPMethod.swift */,
 				95B4998E2500C1A600333C7A /* Assets.xcassets */,
 				95B499902500C1A600333C7A /* LaunchScreen.storyboard */,
 				95B499932500C1A600333C7A /* Info.plist */,
@@ -126,7 +138,6 @@
 			files = (
 				95B499922500C1A600333C7A /* LaunchScreen.storyboard in Resources */,
 				95B4998F2500C1A600333C7A /* Assets.xcassets in Resources */,
-				95B4998D2500C1A500333C7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +148,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B4999E2500C28100333C7A /* Networker.swift in Sources */,
 				95B4998A2500C1A500333C7A /* ViewController.swift in Sources */,
+				95B499A22500C2D000333C7A /* HTTPMethod.swift in Sources */,
 				95B499862500C1A500333C7A /* AppDelegate.swift in Sources */,
+				95B499A42500C4EB00333C7A /* BeverageStore.swift in Sources */,
+				95B4999A2500C1FC00333C7A /* Beverage.swift in Sources */,
+				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,
 				95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +162,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		95B4998B2500C1A500333C7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95B4998C2500C1A500333C7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95B499902500C1A600333C7A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DEYT8Z7L38;
 				INFOPLIST_FILE = BottleViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DEYT8Z7L38;
 				INFOPLIST_FILE = BottleViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
