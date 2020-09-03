@@ -19,4 +19,16 @@ final class BeverageStore {
             }
         }
     }
+    
+    func fetchAllBeverageImages(completion: @escaping (Result<[URL], Error>) -> Void) {
+        fetchAllBeverages { result in
+            do {
+                let beverages = try result.get()
+                let images = beverages.flatMap { $0.articles.compactMap { $0.image } }
+                completion(.success(images))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
 }
