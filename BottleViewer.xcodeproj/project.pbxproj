@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,8 @@
 		95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */; };
 		95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */; };
 		95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B52500E1C300333C7A /* BeverageStackView.swift */; };
+		95B499B92500E4BC00333C7A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 95B499B82500E4BC00333C7A /* Nuke */; };
+		95B499BB2500E5E500333C7A /* Nuke+LoadingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,7 @@
 		95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 		95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageDetailLabel.swift; sourceTree = "<group>"; };
 		95B499B52500E1C300333C7A /* BeverageStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageStackView.swift; sourceTree = "<group>"; };
+		95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nuke+LoadingOptions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B499B92500E4BC00333C7A /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +145,7 @@
 			children = (
 				95B499AC2500C91D00333C7A /* UIView+Extensions.swift */,
 				95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */,
+				95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +166,9 @@
 			dependencies = (
 			);
 			name = BottleViewer;
+			packageProductDependencies = (
+				95B499B82500E4BC00333C7A /* Nuke */,
+			);
 			productName = BottleViewer;
 			productReference = 95B499822500C1A500333C7A /* BottleViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 95B499792500C1A500333C7A;
+			packageReferences = (
+				95B499B72500E4BC00333C7A /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 95B499832500C1A500333C7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,6 +238,7 @@
 				95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */,
 				95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */,
 				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,
+				95B499BB2500E5E500333C7A /* Nuke+LoadingOptions.swift in Sources */,
 				95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95B499B72500E4BC00333C7A /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95B499B82500E4BC00333C7A /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95B499B72500E4BC00333C7A /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95B4997A2500C1A500333C7A /* Project object */;
 }

@@ -24,20 +24,7 @@ final class BeverageList: UIViewController {
         super.viewDidLoad()
         
         configure()
-        
-        store.fetchAllBeverages { [weak self] result in
-            guard let self = self else { return }
-            
-            do {
-                let beverages = try result.get()
-                self.beverages = beverages
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()                    
-                }
-            } catch {
-                self.presentAlert(with: "An error occured", message: error.localizedDescription)
-            }
-        }
+        fetchAllBeers()
     }
     
     private func configure() {
@@ -51,6 +38,22 @@ final class BeverageList: UIViewController {
         
         tableView.pinToFourEdges(in: view)
     }
+    
+    private func fetchAllBeers() {
+        store.fetchAllBeverages { [weak self] result in
+            guard let self = self else { return }
+            
+            do {
+                let beverages = try result.get()
+                self.beverages = beverages
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch {
+                self.presentAlert(with: "An error occured", message: error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension BeverageList: UITableViewDataSource {
@@ -63,14 +66,7 @@ extension BeverageList: UITableViewDataSource {
         
         guard let beverageCell = cell as? BeverageCell else { fatalError("Couldn't dequeue beverage cell") }
         beverageCell.configure(with: beverages[indexPath.row])
-        beverageCell.delegate = self
         
         return cell
-    }
-}
-
-extension BeverageList: BeverageCellDelegate {
-    func beverageCell(_ beverageCell: BeverageCell, didFailWithError error: Error) {
-        presentAlert(with: "An error occured", message: error.localizedDescription)
     }
 }

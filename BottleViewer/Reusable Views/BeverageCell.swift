@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol BeverageCellDelegate: UIViewController {
-    func beverageCell(_ beverageCell: BeverageCell, didFailWithError error: Error)
-}
+import Nuke
 
 final class BeverageCell: UITableViewCell {
     static let reuseIdentifier = "BeverageCell"
@@ -52,8 +49,6 @@ final class BeverageCell: UITableViewCell {
         return stackView
     }()
     
-    weak var delegate: BeverageCellDelegate?
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -82,19 +77,7 @@ final class BeverageCell: UITableViewCell {
     }
     
     func configure(with beverage: Beverage) {
-        Networker.shared.request(URLRequestFactory.imageURLRequest(for: beverage)) { [weak self] result in
-            guard let self = self else { return }
-            
-            do {
-                let data = try result.get()
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.beverageImageView.image = image
-                }
-            } catch {
-                self.delegate?.beverageCell(self, didFailWithError: error)
-            }
-        }
+        Nuke.loadImage(with: beverage.articles.first!.image, options: .beverageLoadingOptions, into: beverageImageView)
         
         beverageNameLabel.text = beverage.brandName
         priceLabel.text = beverage.articles.first?.formattedPrice
