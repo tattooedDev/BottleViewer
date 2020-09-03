@@ -21,6 +21,8 @@
 		95B499AD2500C91D00333C7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499AC2500C91D00333C7A /* UIView+Extensions.swift */; };
 		95B499B02500D05800333C7A /* BeverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499AF2500D05800333C7A /* BeverageCell.swift */; };
 		95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */; };
+		95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */; };
+		95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B52500E1C300333C7A /* BeverageStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		95B499AC2500C91D00333C7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		95B499AF2500D05800333C7A /* BeverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageCell.swift; sourceTree = "<group>"; };
 		95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
+		95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageDetailLabel.swift; sourceTree = "<group>"; };
+		95B499B52500E1C300333C7A /* BeverageStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 			children = (
 				95B499A92500C89E00333C7A /* BeveragesTableView.swift */,
 				95B499AF2500D05800333C7A /* BeverageCell.swift */,
+				95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */,
+				95B499B52500E1C300333C7A /* BeverageStackView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -216,7 +222,9 @@
 				95B499B02500D05800333C7A /* BeverageCell.swift in Sources */,
 				95B499A42500C4EB00333C7A /* BeverageStore.swift in Sources */,
 				95B4999A2500C1FC00333C7A /* Beverage.swift in Sources */,
+				95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */,
 				95B499AA2500C89E00333C7A /* BeveragesTableView.swift in Sources */,
+				95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */,
 				95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */,
 				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,
 				95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */,

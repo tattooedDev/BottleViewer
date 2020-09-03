@@ -23,8 +23,6 @@ final class BeverageList: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
-        
         configure()
         
         store.fetchAllBeverages { [weak self] result in
@@ -43,6 +41,12 @@ final class BeverageList: UIViewController {
     }
     
     private func configure() {
+        title = "Beers"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        view.backgroundColor = .systemBackground
+        
         view.addSubview(tableView)
         
         tableView.pinToFourEdges(in: view)
@@ -59,7 +63,14 @@ extension BeverageList: UITableViewDataSource {
         
         guard let beverageCell = cell as? BeverageCell else { fatalError("Couldn't dequeue beverage cell") }
         beverageCell.configure(with: beverages[indexPath.row])
+        beverageCell.delegate = self
         
         return cell
+    }
+}
+
+extension BeverageList: BeverageCellDelegate {
+    func beverageCell(_ beverageCell: BeverageCell, didFailWithError error: Error) {
+        presentAlert(with: "An error occured", message: error.localizedDescription)
     }
 }

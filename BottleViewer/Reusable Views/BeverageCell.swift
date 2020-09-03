@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol BeverageCellDelegate: UIViewController {
+    func beverageCell(_ beverageCell: BeverageCell, didFailWithError error: Error)
+}
+
 final class BeverageCell: UITableViewCell {
     static let reuseIdentifier = "BeverageCell"
     
@@ -19,43 +23,42 @@ final class BeverageCell: UITableViewCell {
     }()
     
     private lazy var beverageNameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = BeverageDetailLabel()
         
         return label
     }()
     
     private lazy var priceLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = BeverageDetailLabel()
         
         return label
     }()
     
     private lazy var pricePerUnitLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = BeverageDetailLabel()
         
         return label
     }()
     
     private lazy var verticalStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [beverageNameLabel, priceLabel, pricePerUnitLabel])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        let stackView = BeverageStackView(axis: .vertical, arrangedSubviews: [beverageNameLabel, priceLabel, pricePerUnitLabel])
         
         return stackView
     }()
     
     private lazy var horizontalStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [beverageImageView, verticalStack])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        let stackView = BeverageStackView(axis: .horizontal, arrangedSubviews: [beverageImageView, verticalStack])
         
         return stackView
     }()
+    
+    weak var delegate: BeverageCellDelegate?
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        beverageImageView.image = nil
+    }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -73,22 +76,23 @@ final class BeverageCell: UITableViewCell {
         NSLayoutConstraint.activate([
             horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             horizontalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
     func configure(with beverage: Beverage) {
-        Networker.shared.request(URLRequestFactory.imageURLRequest(for: beverage)) { result in
+        Networker.shared.request(URLRequestFactory.imageURLRequest(for: beverage)) { [weak self] result in
+            guard let self = self else { return }
+            
             do {
                 let data = try result.get()
                 let image = UIImage(data: data)
                 DispatchQueue.main.async {
                     self.beverageImageView.image = image
-                    self.layoutIfNeeded()
                 }
             } catch {
-                print(error)
+                self.delegate?.beverageCell(self, didFailWithError: error)
             }
         }
         

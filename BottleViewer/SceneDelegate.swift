@@ -16,7 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = BeverageList()
+        window?.rootViewController = UINavigationController(rootViewController: BeverageList())
         window?.makeKeyAndVisible()
     }
 }
