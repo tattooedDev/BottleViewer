@@ -15,6 +15,13 @@ struct Beverage: Codable {
         let unit: String
         let pricePerUnit: String?
         let image: URL
+        
+        var formattedPrice: String? {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .currency
+            numberFormatter.locale = .current
+            return numberFormatter.string(from: price as NSNumber)
+        }
     }
     
     let id: Int

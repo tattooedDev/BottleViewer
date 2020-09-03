@@ -8,8 +8,14 @@
 import Foundation
 
 final class Networker {
-    enum NetworkingError: Error {
+    enum NetworkingError: LocalizedError {
         case unknown
+        
+        var errorDescription: String? {
+            switch self {
+                case .unknown: return "An unknown error occured. Please try again later."
+            }
+        }
     }
     
     static let shared = Networker()

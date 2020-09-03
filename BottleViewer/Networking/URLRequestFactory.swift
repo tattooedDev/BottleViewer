@@ -16,4 +16,8 @@ struct URLRequestFactory {
         let url = URL(string: baseURL)!
         return URLRequest(url: url)
     }
+    
+    static func imageURLRequest(for beverage: Beverage) -> URLRequest {
+        return URLRequest(url: beverage.articles.first!.image)
+    }
 }

@@ -8,8 +8,6 @@
 import Foundation
 
 final class BeverageStore {
-    private(set) var allBeverages = [Beverage]()
-    
     func fetchAllBeverages(completion: @escaping (Result<[Beverage], Error>) -> Void) {
         Networker.shared.request(URLRequestFactory.allBeveragesURLRequest()) { result in
             do {
