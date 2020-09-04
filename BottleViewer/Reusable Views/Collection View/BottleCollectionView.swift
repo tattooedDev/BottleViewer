@@ -25,5 +25,6 @@ final class BottleCollectionView: UICollectionView {
         backgroundColor = .systemBackground
         
         register(BottleCell.self, forCellWithReuseIdentifier: BottleCell.reuseIdentifier)
+        register(DetailCell.self, forCellWithReuseIdentifier: DetailCell.reuseIdentifier)
     }
 }

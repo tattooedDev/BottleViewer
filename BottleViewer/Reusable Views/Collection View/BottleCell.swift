@@ -34,7 +34,7 @@ final class BottleCell: UICollectionViewCell {
         bottleImageView.pinToFourEdges(in: contentView)
     }
     
-    func configure(with url: URL) {
-        Nuke.loadImage(with: url, options: .beverageLoadingOptions, into: bottleImageView)
+    func configure(article: Beverage.Article) {
+        Nuke.loadImage(with: article.image, options: .beverageLoadingOptions, into: bottleImageView)
     }
 }

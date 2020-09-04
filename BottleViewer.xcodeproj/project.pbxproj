@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9533D2F72501041100FDFAAB /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2F62501041100FDFAAB /* BeerListViewController.swift */; };
 		9533D2F92501057D00FDFAAB /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */; };
-		9533D2FB250106A400FDFAAB /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */; };
+		9536C32725024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9536C32625024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift */; };
 		95B499862500C1A500333C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499852500C1A500333C7A /* AppDelegate.swift */; };
 		95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499872500C1A500333C7A /* SceneDelegate.swift */; };
-		95B4998A2500C1A500333C7A /* BeverageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499892500C1A500333C7A /* BeverageList.swift */; };
 		95B4998F2500C1A600333C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B4998E2500C1A600333C7A /* Assets.xcassets */; };
 		95B499922500C1A600333C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95B499902500C1A600333C7A /* LaunchScreen.storyboard */; };
 		95B4999A2500C1FC00333C7A /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499992500C1FC00333C7A /* Beverage.swift */; };
@@ -20,9 +18,7 @@
 		95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4999F2500C2A700333C7A /* URLRequestFactory.swift */; };
 		95B499A22500C2D000333C7A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499A12500C2D000333C7A /* HTTPMethod.swift */; };
 		95B499A42500C4EB00333C7A /* BeverageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499A32500C4EB00333C7A /* BeverageStore.swift */; };
-		95B499AA2500C89E00333C7A /* BeveragesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499A92500C89E00333C7A /* BeveragesTableView.swift */; };
 		95B499AD2500C91D00333C7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499AC2500C91D00333C7A /* UIView+Extensions.swift */; };
-		95B499B02500D05800333C7A /* BeverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499AF2500D05800333C7A /* BeverageCell.swift */; };
 		95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */; };
 		95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */; };
 		95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499B52500E1C300333C7A /* BeverageStackView.swift */; };
@@ -30,16 +26,17 @@
 		95B499BB2500E5E500333C7A /* Nuke+LoadingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */; };
 		95B499BF2500F40900333C7A /* BottleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499BE2500F40900333C7A /* BottleCell.swift */; };
 		95B499C32500F48B00333C7A /* BottleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499C22500F48B00333C7A /* BottleCollectionView.swift */; };
+		95FB5A9C250273C900AF113D /* BeverageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */; };
+		95FB5A9E250276AC00AF113D /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9D250276AC00AF113D /* DetailCell.swift */; };
+		95FB5AA025027B6400AF113D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9F25027B6400AF113D /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9533D2F62501041100FDFAAB /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
 		9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
-		9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewController.swift; sourceTree = "<group>"; };
+		9536C32625024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+BeerPriceFormatter.swift"; sourceTree = "<group>"; };
 		95B499822500C1A500333C7A /* BottleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B499852500C1A500333C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B499872500C1A500333C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95B499892500C1A500333C7A /* BeverageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageList.swift; sourceTree = "<group>"; };
 		95B4998E2500C1A600333C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95B499912500C1A600333C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95B499932500C1A600333C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,15 +45,16 @@
 		95B4999F2500C2A700333C7A /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		95B499A12500C2D000333C7A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		95B499A32500C4EB00333C7A /* BeverageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageStore.swift; sourceTree = "<group>"; };
-		95B499A92500C89E00333C7A /* BeveragesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeveragesTableView.swift; sourceTree = "<group>"; };
 		95B499AC2500C91D00333C7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		95B499AF2500D05800333C7A /* BeverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageCell.swift; sourceTree = "<group>"; };
 		95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 		95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageDetailLabel.swift; sourceTree = "<group>"; };
 		95B499B52500E1C300333C7A /* BeverageStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageStackView.swift; sourceTree = "<group>"; };
 		95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nuke+LoadingOptions.swift"; sourceTree = "<group>"; };
 		95B499BE2500F40900333C7A /* BottleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCell.swift; sourceTree = "<group>"; };
 		95B499C22500F48B00333C7A /* BottleCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottleCollectionView.swift; sourceTree = "<group>"; };
+		95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageCollectionViewController.swift; sourceTree = "<group>"; };
+		95FB5A9D250276AC00AF113D /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		95FB5A9F25027B6400AF113D /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +132,7 @@
 		95B499A82500C87100333C7A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95B499892500C1A500333C7A /* BeverageList.swift */,
-				9533D2F62501041100FDFAAB /* BeerListViewController.swift */,
-				9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */,
+				95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,10 +140,10 @@
 		95B499AB2500C8D000333C7A /* Reusable Views */ = {
 			isa = PBXGroup;
 			children = (
-				95B499C02500F45600333C7A /* Table View */,
 				95B499C12500F46000333C7A /* Collection View */,
 				95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */,
 				95B499B52500E1C300333C7A /* BeverageStackView.swift */,
+				95FB5A9F25027B6400AF113D /* ButtonView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -159,17 +155,9 @@
 				95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */,
 				95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */,
 				9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */,
+				9536C32625024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		95B499C02500F45600333C7A /* Table View */ = {
-			isa = PBXGroup;
-			children = (
-				95B499A92500C89E00333C7A /* BeveragesTableView.swift */,
-				95B499AF2500D05800333C7A /* BeverageCell.swift */,
-			);
-			path = "Table View";
 			sourceTree = "<group>";
 		};
 		95B499C12500F46000333C7A /* Collection View */ = {
@@ -177,6 +165,7 @@
 			children = (
 				95B499C22500F48B00333C7A /* BottleCollectionView.swift */,
 				95B499BE2500F40900333C7A /* BottleCell.swift */,
+				95FB5A9D250276AC00AF113D /* DetailCell.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -257,23 +246,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				95B4999E2500C28100333C7A /* Networker.swift in Sources */,
-				95B4998A2500C1A500333C7A /* BeverageList.swift in Sources */,
 				95B499BF2500F40900333C7A /* BottleCell.swift in Sources */,
+				95FB5A9E250276AC00AF113D /* DetailCell.swift in Sources */,
 				95B499AD2500C91D00333C7A /* UIView+Extensions.swift in Sources */,
 				95B499A22500C2D000333C7A /* HTTPMethod.swift in Sources */,
 				95B499862500C1A500333C7A /* AppDelegate.swift in Sources */,
-				95B499B02500D05800333C7A /* BeverageCell.swift in Sources */,
 				95B499A42500C4EB00333C7A /* BeverageStore.swift in Sources */,
 				95B4999A2500C1FC00333C7A /* Beverage.swift in Sources */,
 				95B499C32500F48B00333C7A /* BottleCollectionView.swift in Sources */,
 				95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */,
-				95B499AA2500C89E00333C7A /* BeveragesTableView.swift in Sources */,
-				9533D2F72501041100FDFAAB /* BeerListViewController.swift in Sources */,
 				9533D2F92501057D00FDFAAB /* UIViewController+ChildViewController.swift in Sources */,
-				9533D2FB250106A400FDFAAB /* BeerCollectionViewController.swift in Sources */,
+				95FB5A9C250273C900AF113D /* BeverageCollectionViewController.swift in Sources */,
 				95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */,
 				95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */,
 				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,
+				9536C32725024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift in Sources */,
+				95FB5AA025027B6400AF113D /* ButtonView.swift in Sources */,
 				95B499BB2500E5E500333C7A /* Nuke+LoadingOptions.swift in Sources */,
 				95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */,
 			);

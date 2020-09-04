@@ -1,0 +1,181 @@
+//
+//  BeverageCollectionViewController.swift
+//  BottleViewer
+//
+//  Created by Dennis Parussini on 04.09.20.
+//
+
+import UIKit
+
+final class BeverageCollectionViewController: UIViewController {
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = BottleCollectionView(frame: .zero, collectionViewLayout: bottleLayout)
+        
+        collectionView.dataSource = self
+        
+        return collectionView
+    }()
+    
+    private lazy var bottleLayout: UICollectionViewLayout = {
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }()
+    
+    private lazy var detailLayout: UICollectionViewLayout = {
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.2))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }()
+    
+    private lazy var buttonView: ButtonView = {
+        let view = ButtonView()
+        
+        return view
+    }()
+    
+    private let store = BeverageStore.shared
+    private var beverages = [Beverage]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configure()
+        fetchBeverages()
+    }
+    
+    private func configure() {
+        title = "Beers"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        view.backgroundColor = .systemBackground
+        
+        view.addSubViews(buttonView, collectionView)
+        
+        buttonView.delegate = self
+        
+        NSLayoutConstraint.activate([
+            buttonView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            buttonView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            buttonView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: buttonView.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    private func fetchBeverages() {
+        store.fetchAllBeverages { [weak self] result in
+            guard let self = self else { return }
+            
+            do {
+                self.beverages = try result.get()
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.presentAlert(with: "An error occured fetching the beverages", message: error.localizedDescription)
+                }
+            }
+        }
+    }
+}
+
+extension BeverageCollectionViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if case detailLayout = collectionView.collectionViewLayout {
+            return beverages.count
+        }
+        
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if case detailLayout = collectionView.collectionViewLayout {
+            return beverages[section].articles.count
+        }
+        
+        return beverages.flatMap({ $0.articles }).count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UICollectionViewCell
+        
+        let beverage = beverages[indexPath.section]
+        
+        switch collectionView.collectionViewLayout {
+            case detailLayout:
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCell.reuseIdentifier, for: indexPath)
+                guard let detailCell = cell as? DetailCell else { fatalError("Couldn't dequeue detail cell") }
+                detailCell.configure(withName: beverage.name, article: beverage.articles[indexPath.row])
+            case bottleLayout:
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: BottleCell.reuseIdentifier, for: indexPath)
+                guard let bottleCell = cell as? BottleCell else { fatalError("Couldn't dequeue bottle cell") }
+                let articles = beverages.flatMap { $0.articles }
+                bottleCell.configure(article: articles[indexPath.row])
+            default: fatalError()
+        }
+        
+        return cell
+    }
+}
+
+extension BeverageCollectionViewController: ButtonViewDelegate {
+    func buttonViewDidTapViewButton(_ buttonView: ButtonView) {
+        switch collectionView.collectionViewLayout {
+            case detailLayout:
+                collectionView.collectionViewLayout = bottleLayout
+                collectionView.reloadData()
+            case bottleLayout:
+                collectionView.collectionViewLayout = detailLayout
+                collectionView.reloadData()
+            default: break
+        }
+    }
+    
+    func buttonViewDidTapSortButton(_ buttonView: ButtonView) {
+        let sorted = beverages.sorted { first, second -> Bool in
+            for firstArticle in first.articles {
+                for secondArticle in second.articles {
+                    if firstArticle.price < secondArticle.price {
+                        return true
+                    }
+                }
+            }
+            
+            return false
+        }
+        beverages = sorted
+        collectionView.reloadData()
+    }
+    
+    func buttonViewDidTapFilterButton(_ buttonView: ButtonView) {
+        let filtered = beverages.filter { beverage -> Bool in
+            for article in beverage.articles {
+                if article.pricePerUnit! < 2 {
+                    return true
+                }
+            }
+            return false
+        }
+        beverages = filtered
+        collectionView.reloadData()
+    }
+}

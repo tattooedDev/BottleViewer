@@ -7,27 +7,24 @@
 
 import Foundation
 
-struct Beverage: Codable {
-    struct Article: Codable {
+struct Beverage: Codable, Hashable {
+    struct Article: Codable, Hashable {
         let id: Int
         let shortDescription: String
         let price: Double
         let unit: String
-        let pricePerUnitText: String?
+        let pricePerUnitText: String
         let image: URL
         
         var formattedPrice: String? {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .currency
-            numberFormatter.locale = .current
+            numberFormatter.locale = Locale(identifier: "de_DE")
             return numberFormatter.string(from: price as NSNumber)
         }
         
         var pricePerUnit: Double? {
-            guard let pricePerUnitText = pricePerUnitText else { return nil }
-            let pricePerUnitString = pricePerUnitText.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: " €/Liter", with: "").replacingOccurrences(of: ",", with: ".")
-            let pricePerUnit = Double(pricePerUnitString)
-            return pricePerUnit
+            return NumberFormatter.beerPriceFormatter.number(from: pricePerUnitText)?.doubleValue
         }
     }
     
@@ -45,5 +42,11 @@ extension Beverage.Article: Comparable {
     
     static func == (lhs: Beverage.Article, rhs: Beverage.Article) -> Bool {
         lhs.id == rhs.id
+    }
+}
+
+extension Beverage: Comparable {
+    static func < (lhs: Beverage, rhs: Beverage) -> Bool {
+        return lhs.articles[0].price < rhs.articles[0].price
     }
 }
