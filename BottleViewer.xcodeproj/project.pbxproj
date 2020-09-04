@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9533D2F72501041100FDFAAB /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2F62501041100FDFAAB /* BeerListViewController.swift */; };
+		9533D2F92501057D00FDFAAB /* UIViewController+ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */; };
+		9533D2FB250106A400FDFAAB /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */; };
 		95B499862500C1A500333C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499852500C1A500333C7A /* AppDelegate.swift */; };
 		95B499882500C1A500333C7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499872500C1A500333C7A /* SceneDelegate.swift */; };
 		95B4998A2500C1A500333C7A /* BeverageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499892500C1A500333C7A /* BeverageList.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9533D2F62501041100FDFAAB /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
+		9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewController.swift"; sourceTree = "<group>"; };
+		9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewController.swift; sourceTree = "<group>"; };
 		95B499822500C1A500333C7A /* BottleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B499852500C1A500333C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B499872500C1A500333C7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				95B499892500C1A500333C7A /* BeverageList.swift */,
+				9533D2F62501041100FDFAAB /* BeerListViewController.swift */,
+				9533D2FA250106A400FDFAAB /* BeerCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 				95B499AC2500C91D00333C7A /* UIView+Extensions.swift */,
 				95B499B12500D11D00333C7A /* UIViewController+UIAlertController.swift */,
 				95B499BA2500E5E500333C7A /* Nuke+LoadingOptions.swift */,
+				9533D2F82501057D00FDFAAB /* UIViewController+ChildViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +268,9 @@
 				95B499C32500F48B00333C7A /* BottleCollectionView.swift in Sources */,
 				95B499B42500DEC100333C7A /* BeverageDetailLabel.swift in Sources */,
 				95B499AA2500C89E00333C7A /* BeveragesTableView.swift in Sources */,
+				9533D2F72501041100FDFAAB /* BeerListViewController.swift in Sources */,
+				9533D2F92501057D00FDFAAB /* UIViewController+ChildViewController.swift in Sources */,
+				9533D2FB250106A400FDFAAB /* BeerCollectionViewController.swift in Sources */,
 				95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */,
 				95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */,
 				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,

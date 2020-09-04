@@ -76,11 +76,11 @@ final class BeverageCell: UITableViewCell {
         ])
     }
     
-    func configure(with beverage: Beverage) {
-        Nuke.loadImage(with: beverage.articles.first!.image, options: .beverageLoadingOptions, into: beverageImageView)
+    func configure(with beverage: Beverage.Article) {
+        Nuke.loadImage(with: beverage.image, options: .beverageLoadingOptions, into: beverageImageView)
         
-        beverageNameLabel.text = beverage.brandName
-        priceLabel.text = beverage.articles.first?.formattedPrice
-        pricePerUnitLabel.text = beverage.articles.first?.shortDescription
+//        beverageNameLabel.text = beverage.name
+        priceLabel.text = beverage.formattedPrice
+        pricePerUnitLabel.text = beverage.shortDescription
     }
 }
