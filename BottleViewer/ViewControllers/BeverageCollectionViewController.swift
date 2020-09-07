@@ -160,31 +160,12 @@ extension BeverageCollectionViewController: ButtonViewDelegate {
     }
     
     func buttonViewDidTapSortButton(_ buttonView: ButtonView) {
-        let sorted = beverages.sorted { first, second -> Bool in
-            for firstArticle in first.articles {
-                for secondArticle in second.articles {
-                    if firstArticle.price < secondArticle.price {
-                        return true
-                    }
-                }
-            }
-            
-            return false
-        }
-        beverages = sorted
+        beverages = store.sortedBeverages(beverages)
         collectionView.reloadData()
     }
     
     func buttonViewDidTapFilterButton(_ buttonView: ButtonView) {
-        let filtered = beverages.filter { beverage -> Bool in
-            for article in beverage.articles {
-                if article.pricePerUnit! < 2 {
-                    return true
-                }
-            }
-            return false
-        }
-        beverages = filtered
+        beverages = store.filteredBeverages(beverages)
         collectionView.reloadData()
     }
 }
