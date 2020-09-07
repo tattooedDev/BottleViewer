@@ -27,6 +27,7 @@
 		95B499BF2500F40900333C7A /* BottleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499BE2500F40900333C7A /* BottleCell.swift */; };
 		95B499C32500F48B00333C7A /* BottleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499C22500F48B00333C7A /* BottleCollectionView.swift */; };
 		95D0E23C2506403E00AE825E /* UIColor+CustomBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E23B2506403E00AE825E /* UIColor+CustomBackgroundColor.swift */; };
+		95D0E23E2506412C00AE825E /* BeverageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E23D2506412C00AE825E /* BeverageButton.swift */; };
 		95FB5A9C250273C900AF113D /* BeverageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */; };
 		95FB5A9E250276AC00AF113D /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9D250276AC00AF113D /* DetailCell.swift */; };
 		95FB5AA025027B6400AF113D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9F25027B6400AF113D /* ButtonView.swift */; };
@@ -54,6 +55,7 @@
 		95B499BE2500F40900333C7A /* BottleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCell.swift; sourceTree = "<group>"; };
 		95B499C22500F48B00333C7A /* BottleCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottleCollectionView.swift; sourceTree = "<group>"; };
 		95D0E23B2506403E00AE825E /* UIColor+CustomBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomBackgroundColor.swift"; sourceTree = "<group>"; };
+		95D0E23D2506412C00AE825E /* BeverageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageButton.swift; sourceTree = "<group>"; };
 		95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageCollectionViewController.swift; sourceTree = "<group>"; };
 		95FB5A9D250276AC00AF113D /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		95FB5A9F25027B6400AF113D /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				95B499C12500F46000333C7A /* Collection View */,
 				95B499B32500DEC100333C7A /* BeverageDetailLabel.swift */,
 				95B499B52500E1C300333C7A /* BeverageStackView.swift */,
+				95D0E23D2506412C00AE825E /* BeverageButton.swift */,
 				95FB5A9F25027B6400AF113D /* ButtonView.swift */,
 			);
 			path = "Reusable Views";
@@ -261,6 +264,7 @@
 				9533D2F92501057D00FDFAAB /* UIViewController+ChildViewController.swift in Sources */,
 				95FB5A9C250273C900AF113D /* BeverageCollectionViewController.swift in Sources */,
 				95B499B62500E1C300333C7A /* BeverageStackView.swift in Sources */,
+				95D0E23E2506412C00AE825E /* BeverageButton.swift in Sources */,
 				95B499B22500D11D00333C7A /* UIViewController+UIAlertController.swift in Sources */,
 				95B499A02500C2A700333C7A /* URLRequestFactory.swift in Sources */,
 				9536C32725024DDA0094EDC3 /* NumberFormatter+BeerPriceFormatter.swift in Sources */,

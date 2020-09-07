@@ -16,30 +16,21 @@ protocol ButtonViewDelegate: class {
 final class ButtonView: UIView {
     
     private lazy var sortButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Sort", for: .normal)
-        button.setTitleColor(.link, for: .normal)
+        let button = BeverageButton(title: "Sort")
         button.addTarget(self, action: #selector(sortButtonTapped), for: .touchUpInside)
         
         return button
     }()
     
     private lazy var viewButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("View", for: .normal)
-        button.setTitleColor(.link, for: .normal)
+        let button = BeverageButton(title: "View")
         button.addTarget(self, action: #selector(viewButtonTapped), for: .touchUpInside)
         
         return button
     }()
     
     private lazy var filterButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Filter", for: .normal)
-        button.setTitleColor(.link, for: .normal)
+        let button = BeverageButton(title: "Filter")
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         
         return button
