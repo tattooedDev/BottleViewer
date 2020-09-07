@@ -15,7 +15,7 @@ final class BottleCell: UICollectionViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        view.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.customBackgroundColor.withAlphaComponent(0.6)
         view.layer.cornerRadius = 8
         
         return view
