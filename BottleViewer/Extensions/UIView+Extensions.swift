@@ -8,6 +8,8 @@
 import UIKit
 
 extension UIView {
+    /// Helper method to pin the view to the four edges of its superview
+    /// - Parameter view: The superview
     func pinToFourEdges(in view: UIView) {
         NSLayoutConstraint.activate([
             topAnchor.constraint(equalTo: view.topAnchor),
@@ -17,6 +19,8 @@ extension UIView {
         ])
     }
     
+    /// A helper method that extends `addSubview`
+    /// - Parameter views: The views to add
     func addSubViews(_ views: UIView...) {
         views.forEach { addSubview($0) }
     }

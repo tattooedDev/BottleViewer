@@ -8,9 +8,12 @@
 import UIKit
 import Nuke
 
+/// Reusable cell for displaying bottles
 final class BottleCell: UICollectionViewCell {
+    //MARK: - Reuse Identifier
     static let reuseIdentifier = "BottleCell"
     
+    /// Custom background view for simplified styling
     private lazy var detailBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +24,7 @@ final class BottleCell: UICollectionViewCell {
         return view
     }()
     
+    /// The image view that displays the individial bottle
     private lazy var bottleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +42,7 @@ final class BottleCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// Cell configuration with Auto Layout setup
     private func configure() {
         contentView.addSubview(detailBackgroundView)
         detailBackgroundView.addSubview(bottleImageView)
@@ -52,6 +57,8 @@ final class BottleCell: UICollectionViewCell {
         ])
     }
     
+    /// Public configuration method which gets called by collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+    /// - Parameter article: The article to display
     func configure(article: Beverage.Article) {
         Nuke.loadImage(with: article.image, options: .beverageLoadingOptions, into: bottleImageView)
     }

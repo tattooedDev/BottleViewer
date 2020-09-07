@@ -8,6 +8,7 @@
 import Foundation
 
 extension NumberFormatter {
+    /// Formats the article's price so only the decimal number remains
     static var beerPriceFormatter: NumberFormatter {
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale(identifier: "de_DE")

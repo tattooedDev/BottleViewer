@@ -28,6 +28,7 @@
 		95B499C32500F48B00333C7A /* BottleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B499C22500F48B00333C7A /* BottleCollectionView.swift */; };
 		95D0E23C2506403E00AE825E /* UIColor+CustomBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E23B2506403E00AE825E /* UIColor+CustomBackgroundColor.swift */; };
 		95D0E23E2506412C00AE825E /* BeverageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E23D2506412C00AE825E /* BeverageButton.swift */; };
+		95D0E242250646A600AE825E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0E241250646A600AE825E /* NetworkError.swift */; };
 		95FB5A9C250273C900AF113D /* BeverageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */; };
 		95FB5A9E250276AC00AF113D /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9D250276AC00AF113D /* DetailCell.swift */; };
 		95FB5AA025027B6400AF113D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB5A9F25027B6400AF113D /* ButtonView.swift */; };
@@ -56,6 +57,7 @@
 		95B499C22500F48B00333C7A /* BottleCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottleCollectionView.swift; sourceTree = "<group>"; };
 		95D0E23B2506403E00AE825E /* UIColor+CustomBackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomBackgroundColor.swift"; sourceTree = "<group>"; };
 		95D0E23D2506412C00AE825E /* BeverageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageButton.swift; sourceTree = "<group>"; };
+		95D0E241250646A600AE825E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		95FB5A9B250273C900AF113D /* BeverageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageCollectionViewController.swift; sourceTree = "<group>"; };
 		95FB5A9D250276AC00AF113D /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		95FB5A9F25027B6400AF113D /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				95B4999D2500C28100333C7A /* Networker.swift */,
 				95B4999F2500C2A700333C7A /* URLRequestFactory.swift */,
 				95B499A12500C2D000333C7A /* HTTPMethod.swift */,
+				95D0E241250646A600AE825E /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			files = (
 				95B4999E2500C28100333C7A /* Networker.swift in Sources */,
 				95B499BF2500F40900333C7A /* BottleCell.swift in Sources */,
+				95D0E242250646A600AE825E /* NetworkError.swift in Sources */,
 				95FB5A9E250276AC00AF113D /* DetailCell.swift in Sources */,
 				95B499AD2500C91D00333C7A /* UIView+Extensions.swift in Sources */,
 				95B499A22500C2D000333C7A /* HTTPMethod.swift in Sources */,
@@ -411,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DEYT8Z7L38;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "BottleViewer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -431,7 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DEYT8Z7L38;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "BottleViewer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

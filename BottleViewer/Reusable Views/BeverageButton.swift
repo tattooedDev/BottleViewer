@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Reusable and pre-configured button
 final class BeverageButton: UIButton {
     
     init(title: String) {

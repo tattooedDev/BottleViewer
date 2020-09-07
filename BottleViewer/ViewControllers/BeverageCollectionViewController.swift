@@ -9,6 +9,7 @@ import UIKit
 
 final class BeverageCollectionViewController: UIViewController {
     
+    //MARK: - Collection View
     private lazy var collectionView: UICollectionView = {
         let collectionView = BottleCollectionView(frame: .zero, collectionViewLayout: bottleLayout)
         
@@ -17,6 +18,7 @@ final class BeverageCollectionViewController: UIViewController {
         return collectionView
     }()
     
+    //MARK: - Collection View Layout
     private lazy var bottleLayout: UICollectionViewLayout = {
         let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: size)
@@ -39,15 +41,18 @@ final class BeverageCollectionViewController: UIViewController {
         return layout
     }()
     
+    //MARK: - Button View
     private lazy var buttonView: ButtonView = {
         let view = ButtonView()
         
         return view
     }()
     
+    //MARK: - Properties
     private let store = BeverageStore.shared
     private var beverages = [Beverage]()
     
+    //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +60,7 @@ final class BeverageCollectionViewController: UIViewController {
         fetchBeverages()
     }
     
+    //MARK: - View Configuration
     private func configure() {
         title = "Beers"
         
@@ -80,6 +86,7 @@ final class BeverageCollectionViewController: UIViewController {
         ])
     }
     
+    //MARK: - Fetch all beverages
     private func fetchBeverages() {
         store.fetchAllBeverages { [weak self] result in
             guard let self = self else { return }
@@ -98,6 +105,7 @@ final class BeverageCollectionViewController: UIViewController {
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension BeverageCollectionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if case detailLayout = collectionView.collectionViewLayout {
@@ -137,6 +145,7 @@ extension BeverageCollectionViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - ButtonViewDelegate
 extension BeverageCollectionViewController: ButtonViewDelegate {
     func buttonViewDidTapViewButton(_ buttonView: ButtonView) {
         switch collectionView.collectionViewLayout {

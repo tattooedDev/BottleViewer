@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The class responsible for fetching the beverages and preparing them for the caller
 final class BeverageStore {
     static let shared = BeverageStore()
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Reusable and pre-configured label
 final class BeverageDetailLabel: UILabel {
 
     override init(frame: CGRect) {

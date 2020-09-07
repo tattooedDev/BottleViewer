@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIViewController {
+    /// Helper method that displays a custom default alert for error messages
+    /// - Parameters:
+    ///   - title: The title of the alert
+    ///   - message: The message of the alert
     func presentAlert(with title: String?, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

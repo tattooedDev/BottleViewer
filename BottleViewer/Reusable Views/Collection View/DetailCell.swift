@@ -8,9 +8,12 @@
 import UIKit
 import Nuke
 
+/// Detail Cell which displays a bottle and some details about the article
 final class DetailCell: UICollectionViewCell {
+    //MARK: - Reuse Identifier
     static let reuseIdentifier = "DetailCell"
     
+    /// Custom background view for simplified styling
     private lazy var detailBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +24,7 @@ final class DetailCell: UICollectionViewCell {
         return view
     }()
     
+    /// The image view that displays the individual bottle
     private lazy var bottleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +33,7 @@ final class DetailCell: UICollectionViewCell {
         return imageView
     }()
     
+    /// The label that displays the name of the article
     private lazy var nameLabel: UILabel = {
         let label = BeverageDetailLabel()
         label.numberOfLines = 0
@@ -37,24 +42,28 @@ final class DetailCell: UICollectionViewCell {
         return label
     }()
     
+    /// The label that displays the price of the article
     private lazy var priceLabel: UILabel = {
         let label = BeverageDetailLabel()
         
         return label
     }()
     
+    /// The label that displays the description of the article, in this case the short description (price/Liter)
     private lazy var descriptionLabel: UILabel = {
         let label = BeverageDetailLabel()
         
         return label
     }()
     
+    /// A vertical stack view that displays the labels
     private lazy var labelStackView: UIStackView = {
         let stackView = BeverageStackView(axis: .vertical, arrangedSubviews: [nameLabel, priceLabel, descriptionLabel])
         
         return stackView
     }()
     
+    /// A horizontal stack view that displays the bottleImageView alongside the labelStackView
     private lazy var stackView: UIStackView = {
         let stackView = BeverageStackView(axis: .horizontal, arrangedSubviews: [bottleImageView, labelStackView])
         stackView.distribution = .fillProportionally
@@ -78,6 +87,7 @@ final class DetailCell: UICollectionViewCell {
         bottleImageView.image = nil
     }
     
+    /// Configuration method for setting up the cell with Auto Layout setup
     private func configure() {
         contentView.addSubview(detailBackgroundView)
         detailBackgroundView.addSubview(stackView)
@@ -94,6 +104,10 @@ final class DetailCell: UICollectionViewCell {
         ])
     }
     
+    /// Public configuration method which gets called by collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+    /// - Parameters:
+    ///   - name: The name of the article
+    ///   - article: The article to display
     func configure(withName name: String, article: Beverage.Article) {
         Nuke.loadImage(with: article.image, options: .beverageLoadingOptions, into: bottleImageView)
         

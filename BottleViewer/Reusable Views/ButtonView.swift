@@ -7,14 +7,19 @@
 
 import UIKit
 
+//MARK: - ButtonView Delegate
+/// The delegate each view has to conform to when displaying the buttons
 protocol ButtonViewDelegate: class {
     func buttonViewDidTapViewButton(_ buttonView: ButtonView)
     func buttonViewDidTapSortButton(_ buttonView: ButtonView)
     func buttonViewDidTapFilterButton(_ buttonView: ButtonView)
 }
 
+//MARK: - ButtonView
+/// A custom view that displays three buttons in a vertical stack
 final class ButtonView: UIView {
     
+    /// The button that triggers a re-sort of the beverages
     private lazy var sortButton: UIButton = {
         let button = BeverageButton(title: "Sort")
         button.addTarget(self, action: #selector(sortButtonTapped), for: .touchUpInside)
@@ -22,6 +27,7 @@ final class ButtonView: UIView {
         return button
     }()
     
+    /// The button that triggers the layout switching in the collection view
     private lazy var viewButton: UIButton = {
         let button = BeverageButton(title: "View")
         button.addTarget(self, action: #selector(viewButtonTapped), for: .touchUpInside)
@@ -29,6 +35,7 @@ final class ButtonView: UIView {
         return button
     }()
     
+    /// The button that triggers the filtering of the beverages
     private lazy var filterButton: UIButton = {
         let button = BeverageButton(title: "Filter")
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
@@ -36,6 +43,7 @@ final class ButtonView: UIView {
         return button
     }()
     
+    /// A horizontal stack that holds all buttons
     private lazy var buttonStackView: UIStackView = {
         let stackView = BeverageStackView(axis: .horizontal, arrangedSubviews: [sortButton, viewButton, filterButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +63,7 @@ final class ButtonView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// Private configuration method
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -63,6 +72,7 @@ final class ButtonView: UIView {
         buttonStackView.pinToFourEdges(in: self)
     }
     
+    //MARK: - ButtonViewDelegate methods
     @objc private func viewButtonTapped() {
         delegate?.buttonViewDidTapViewButton(self)
     }

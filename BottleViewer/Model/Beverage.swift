@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// Custom model type which models the JSON response from the server
 struct Beverage: Codable, Hashable {
+    
+    /// A nested struct to model the Article
     struct Article: Codable, Hashable {
         let id: Int
         let shortDescription: String
@@ -16,6 +19,7 @@ struct Beverage: Codable, Hashable {
         let pricePerUnitText: String
         let image: URL
         
+        /// Computed property for formatting the price to display the currency symbol
         var formattedPrice: String? {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .currency
@@ -23,6 +27,7 @@ struct Beverage: Codable, Hashable {
             return numberFormatter.string(from: price as NSNumber)
         }
         
+        /// Computed property for formatting the price per unit
         var pricePerUnit: Double? {
             return NumberFormatter.beerPriceFormatter.number(from: pricePerUnitText)?.doubleValue
         }
@@ -35,6 +40,7 @@ struct Beverage: Codable, Hashable {
     let articles: [Article]
 }
 
+//MARK: - Comparable conformance
 extension Beverage.Article: Comparable {
     static func < (lhs: Beverage.Article, rhs: Beverage.Article) -> Bool {
         return lhs.price < rhs.price

@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Reusable and pre-configured UIStackView
 final class BeverageStackView: UIStackView {
     
     init(axis: NSLayoutConstraint.Axis, arrangedSubviews: [UIView]) {

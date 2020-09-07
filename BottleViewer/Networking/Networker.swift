@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// The class that will deal with all networking in the app
 final class Networker {
+    
+    /// A custom fallback error for when the request fails with no HTTP status code
     enum NetworkingError: LocalizedError {
         case unknown
         
@@ -22,16 +25,26 @@ final class Networker {
     
     private init() {}
     
+    /// Executes a URLRequest
+    /// - Parameters:
+    ///   - urlRequest: The URLRequest to exectute
+    ///   - completion: Completes with either the `Data` returned from the API or an `Error`
     func request(_ urlRequest: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 completion(.failure(error))
-            } else if let data = data {
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    completion(.failure(NetworkingError.unknown))
+            } else if let httpResponse = response as? HTTPURLResponse {
+                guard httpResponse.statusCode == 200 else {
+                    guard let networkError = NetworkError(rawValue: httpResponse.statusCode) else {
+                        completion(.failure(NetworkingError.unknown))
+                        return
+                    }
+                    
+                    completion(.failure(networkError))
                     return
                 }
                 
+                guard let data = data else { return }
                 completion(.success(data))
             }
         }.resume()

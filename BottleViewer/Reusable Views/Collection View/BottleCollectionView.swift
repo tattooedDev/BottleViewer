@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+/// Reusable collection view set up for this project
 final class BottleCollectionView: UICollectionView {
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -19,6 +21,8 @@ final class BottleCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    /// Configures the collection view with background color and registers custom cells
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         
